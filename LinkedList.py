@@ -1,4 +1,6 @@
 import os
+import random
+
 class Node:
 
     def __init__(self, value):
@@ -143,17 +145,13 @@ print(my_list)
 # Sort list
 del my_list
 my_list = LinkedList()
-my_list.insert_at_end(50)
-my_list.insert_at_end(10)
-my_list.insert_at_end(15)
-my_list.insert_at_end(40)
-my_list.insert_at_end(25)
-my_list.insert_at_end(30)
-print("List")
+print('Bubble Sorting a List')
+
+for i in range(0,10):
+    my_list.insert_at_end(random.randrange(0,1000))
+print("List before sort")
 print(my_list)
-print('Sorted')
+
+print('List after sort')
 my_list.bubbleSort()
-
 print(my_list)
-
-
