@@ -73,6 +73,24 @@ class LinkedList:
             current = next
         self.head = previous
 
+    def swap(self, ptr1, ptr2):
+        tmp = ptr2.value
+        ptr2.value = ptr1.value
+        ptr1.value = tmp
+
+    def bubbleSort(self):
+        swapped = True
+
+        while swapped:
+            swapped = False
+            current = self.head
+
+            while current.next:
+                if current.value > current.next.value:
+                    self.swap(current, current.next)
+                    swapped = True
+                current = current.next
+
     # Print the linked list
     def __repr__(self):
         return_string = ''
@@ -118,3 +136,24 @@ print(my_list)
 print('Reverse the list')
 my_list.reverse_elements()
 print(my_list)
+print('Reverse the list')
+my_list.reverse_elements()
+print(my_list)
+
+# Sort list
+del my_list
+my_list = LinkedList()
+my_list.insert_at_end(50)
+my_list.insert_at_end(10)
+my_list.insert_at_end(15)
+my_list.insert_at_end(40)
+my_list.insert_at_end(25)
+my_list.insert_at_end(30)
+print("List")
+print(my_list)
+print('Sorted')
+my_list.bubbleSort()
+
+print(my_list)
+
+
